@@ -1,14 +1,10 @@
 package chatbot.view;
 
-import chatbot.controller.chatbotappController;
+public class chatbotView {
 
-public class chatbotView 
-{
-
-	private chatbotappController baseController;
-
-	public chatbotView(chatbotappController baseController)
-	{
-		this.baseController = baseController;
+	public String displayChatbotConversations(String message) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
 }

@@ -5,8 +5,8 @@ public class chatbot {
 	private int numberOfChats;
 
 	/**
-	 * Creats a Chatbot object with a specified name. Initializes the total chats to 0
-	 * @param name THe name of the chatbot.
+	 * Creates a Chatbot object with a specified name. Initializes the total chats to 0
+	 * @param name The name of the chatbot.
 	 */
 	public chatbot(String name)
 	{
@@ -22,7 +22,7 @@ public class chatbot {
 	}
 	/**
 	 * returns the amount you chat
-	 * @return
+	 * @returnThe current number of chats.
 	 */
 	public int getnumberOfChats()
 	{
@@ -30,21 +30,21 @@ public class chatbot {
 	}
 	/**
 	 * finds the name and changes the format 
-	 * @param name
+	 * @param name THe new name for the Chatbot
 	 */
 	public void setName(String name) 
 	{
 		this.name = name;
 	}
 	/**
-	 * counts by one by chats
+	 * counts by one by inputs and responses 
 	 */
 	public void incrementChats()
 	{
 		numberOfChats++;
 	}
 	/**
-	 * make sure that it is ok to quit
+	 * make sure that it is OK to quit
 	 * @param input
 	 * @return
 	 */
