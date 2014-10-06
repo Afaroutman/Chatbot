@@ -4,7 +4,7 @@ public class Runner
 {
 	public static void main(String[] agrs)
 	{
-		chatbotappController mychatbotappController = new chatbotappController();
+		ChatbotAppController mychatbotappController = new ChatbotAppController();
 		mychatbotappController.start();
 	}
 

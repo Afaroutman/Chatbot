@@ -1,5 +1,5 @@
 package chatbot.controller;
 
-public class appView {
+public class AppView {
 
 }

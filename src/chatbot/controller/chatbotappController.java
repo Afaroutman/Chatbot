@@ -1,56 +1,68 @@
 package chatbot.controller;
 
-import javax.swing.JOptionPane;
+import chatbot.model.Chatbot;
+import chatbot.view.ChatbotView;
 
-import chatbot.model.chatbot;
-import chatbot.view.chatbotView;
+/**
+ * Application Controller for the Chatbot String manipulation project.
+ * Responsible for controlling the VIew and model packages.
+ * 
+ * @author ahit0637
+ * @version 1.3 10/1/14
+ */
+public class ChatbotAppController {
 
-public class chatbotappController<appView> {
+	private ChatbotView AppView;
 
-	private chatbotView appView;
-	private chatbot notSoCleverBot;
+	private Chatbot notSoCleverBot;
 	/**
-	 * Creates a chatbotAppController and initializes the associated View and Model objects.
+	 * The startup message for our chatbot application.
 	 */
-	public chatbotappController()
-	{
-		appView = new chatbotView();
-		notSoCleverBot = new chatbot("Mr. not so clever");
+	private String startMessage;
+
+	/**
+	 * Creates a chatbotAppController and initializes the associated View and
+	 * Model objects.
+	 */
+	public ChatbotAppController() {
+		AppView = new ChatbotView(this);
+		notSoCleverBot = new Chatbot("Mr. not so clever");
+		startMessage = "Welcome to the " + notSoCleverBot.getName()
+				+ " Chatbot, type in your name";
 	}
+
 	/**
 	 * Allows other objects access to the notSoCleverBot.
 	 * @return The Chatbot for this app
 	 */
-	public chatbot getNotSoCleverBot()
-	{
-		return getNotSoCleverBot();
+	public Chatbot getnotSoCleverBot() {
+		return notSoCleverBot;
 	}
-	
+
 	/**
 	 * starts the Chatbot application
 	 */
-	public void start() 
-	
+	public void start()
+
 	{
-		String message = JOptionPane.showInputDialog(null, "Welcome to chatbot, type in your name");
-	
-		while(!notSoCleverBot.quitChecker(message))
-		{
-			message = appView.displayChatbotConversations(message);
-			
-		
+		String message = AppView.displayChatbotConversations(startMessage);
+
+		while (!notSoCleverBot.quitChecker(message)) {
+			message = notSoCleverBot.processText(message);
+			message = AppView.displayChatbotConversations(message);
 		}
-			
-		
-	}
-	/**
-	 * Says Bye and quits 
-	 */
-	
-	private void quit()
-	{
-		JOptionPane.showMessageDialog(null, "bye");
-		System.exit(0);
+
+		quit();
+
 	}
 
+	/**
+	 * Says Bye and quits
+	 */
+	
+	private void quit() {
+		AppView.displayInformation("goodbye cruel user :(");
+		System.exit(0);
+	}
+	
 }
