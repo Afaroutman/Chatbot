@@ -33,7 +33,7 @@ public class Chatbot
 	{
 		return name;
 	}
-
+//im a cowboy
 	/**
 	 * returns the amount you chat
 	 * 
