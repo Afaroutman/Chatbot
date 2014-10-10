@@ -4,7 +4,7 @@ import chatbot.model.Chatbot;
 import chatbot.view.ChatbotView;
 
 /**
- * Application Controller for the Chatbot String manipulation project.
+ * Application Controller for the Chat robot String manipulation project.
  * Responsible for controlling the VIew and model packages.
  * 
  * @author ahit0637
@@ -16,7 +16,7 @@ public class ChatbotAppController {
 
 	private Chatbot notSoCleverBot;
 	/**
-	 * The startup message for our chatbot application.
+	 * The startup message for our chat robot application.
 	 */
 	private String startMessage;
 
@@ -33,7 +33,7 @@ public class ChatbotAppController {
 
 	/**
 	 * Allows other objects access to the notSoCleverBot.
-	 * @return The Chatbot for this app
+	 * @return The Chatbot for this application
 	 */
 	public Chatbot getnotSoCleverBot() {
 		return notSoCleverBot;

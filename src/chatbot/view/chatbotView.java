@@ -14,21 +14,21 @@ public class ChatbotView
 
 	}
 	/**
-	 * Displays the supplied String parameter to the user via popup and returns the users response to the controller
+	 * Displays the supplied String parameter to the user via pop up and returns the users response to the controller
 	 * @param input The supplied text to be displayed.
 	 * @return The users input.
 	 */
 	public String displayChatbotConversations(String input)
 	{
 		String output = "";
-		
-		output = JOptionPane.showInputDialog(null, input );
+		 
+		output = JOptionPane.showInputDialog(null, baseController.getnotSoCleverBot().getName() +" says: " + input );
 	
 	
 		return output;
 	}
 	/**
-	 * Displays the supplied input via a popup window
+	 * Displays the supplied input via a pop up window
 	 * @param input The text to be displayed.
 	 */
 	public void displayInformation(String input)
