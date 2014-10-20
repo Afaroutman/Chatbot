@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 public class Chatbot
 {
-	
 	private String name;
 	private int numberOfChats;
 	private ArrayList<String> memeList;
 	private String contentArea;
-	
+
 	/**
 	 * Creates a Chatbot object with a specified name. Initializes the total
 	 * chats to 0
@@ -33,7 +32,7 @@ public class Chatbot
 	{
 		return name;
 	}
-//im a cowboy
+
 	/**
 	 * returns the amount you chat
 	 * 
@@ -56,9 +55,12 @@ public class Chatbot
 		memeList.add("Y U no");
 		memeList.add("I don't always");
 	}
+
 	/**
 	 * Checks if you say a meme
-	 * @param currentText sees if the current text equals a meme
+	 * 
+	 * @param currentText
+	 *            sees if the current text equals a meme
 	 * @return shows the meme to the user
 	 */
 	private boolean memeChecker(String currentText)
@@ -153,6 +155,7 @@ public class Chatbot
 		return processedText;
 
 	}
+
 	private boolean contentChecker(String userText)
 	{
 		boolean hasMyContent = false;
