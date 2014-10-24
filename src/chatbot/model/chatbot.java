@@ -91,7 +91,7 @@ public class Chatbot
 	 * finds the name and changes the format
 	 * 
 	 * @param name
-	 *            THe new name for the Chatbot
+	 *            The new name for the Chatbot
 	 */
 	public void setName(String name)
 	{
