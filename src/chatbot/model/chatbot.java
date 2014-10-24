@@ -1,5 +1,6 @@
 package chatbot.model;
 
+
 import java.util.ArrayList;
 
 public class Chatbot
@@ -180,7 +181,6 @@ public class Chatbot
 
 	/**
 	 * make sure that it is OK to quit
-	 * 
 	 * @param input
 	 * @return
 	 */
@@ -194,4 +194,5 @@ public class Chatbot
 		}
 		return okToQuit;
 	}
+	
 }
