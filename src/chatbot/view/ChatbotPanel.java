@@ -29,7 +29,6 @@ public class ChatbotPanel extends JPanel
 	private ChatbotAppController baseController;
 
 	private JButton sampleButton;
-	private JTextField sampleField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
 	private SpringLayout baseLayout;
@@ -41,12 +40,14 @@ public class ChatbotPanel extends JPanel
 		this.baseController = baseController;
 
 		sampleButton = new JButton("Steven why?");
-		sampleField = new JTextField(25);
-		chatArea = new JTextArea(5, 25);
+		chatArea = new JTextArea(1, 10);
 		chatPane = new JScrollPane(chatArea);
-		ToggleBtn = new JToggleButton("Touch!");
-		background = new JLabel(new ImageIcon(getClass().getResource("/chatbot/view/images/ChatbotBackground.png")));
+		background = new JLabel(new ImageIcon(ChatbotPanel.class.getResource("/chatbot/view/images/ChatbotBackground.png")));
 		baseLayout = new SpringLayout();
+		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 64,
+				SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 133,
+				SpringLayout.WEST, this);
 
 		setupScrollPane();
 		setupPanel();
@@ -68,7 +69,12 @@ public class ChatbotPanel extends JPanel
 		//this.setBackground(Color.GREEN);
 		this.setLayout(baseLayout);
 		this.add(sampleButton);
-		this.add(sampleField);
+		ToggleBtn = new JToggleButton("Touch!");
+		baseLayout.putConstraint(SpringLayout.NORTH, ToggleBtn, 74, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, ToggleBtn, 338, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, ToggleBtn, -68, SpringLayout.NORTH, chatPane);
+		baseLayout.putConstraint(SpringLayout.EAST, ToggleBtn, -260, SpringLayout.EAST, this);
+		add(ToggleBtn);
 		this.add(chatPane);
 		this.add(background);
 		sampleButton.setBackground(Color.cyan);
@@ -80,10 +86,6 @@ public class ChatbotPanel extends JPanel
 	 */
 	private void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.SOUTH, sampleField, -10,
-				SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, sampleField, -10,
-				SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, sampleButton, 10,
 				SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, sampleButton, 10,
@@ -92,19 +94,6 @@ public class ChatbotPanel extends JPanel
 				SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.EAST, sampleButton, 119,
 				SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 100,
-				SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 100,
-				SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, ToggleBtn, -1,
-				SpringLayout.NORTH, sampleButton);
-		baseLayout.putConstraint(SpringLayout.WEST, ToggleBtn, 6,
-				SpringLayout.EAST, sampleButton);
-		baseLayout.putConstraint(SpringLayout.SOUTH, ToggleBtn, -68,
-				SpringLayout.NORTH, chatPane);
-		baseLayout.putConstraint(SpringLayout.EAST, ToggleBtn, -260,
-				SpringLayout.EAST, this);
-		add(ToggleBtn);
 
 	}
 
@@ -114,14 +103,14 @@ public class ChatbotPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				sampleField.setBackground(Color.CYAN);
+				sampleButton.setBackground(Color.CYAN);
 			}
 		});
 		ToggleBtn.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				sampleField.setBackground(Color.BLUE);
+				sampleButton.setBackground(Color.BLUE);
 			}
 		});
 	}
