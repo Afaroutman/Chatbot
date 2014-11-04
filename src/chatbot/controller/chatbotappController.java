@@ -2,14 +2,15 @@ package chatbot.controller;
 
 import chatbot.model.Chatbot;
 import chatbot.view.ChatbotFrame;
+import chatbot.view.ChatbotPanel;
 import chatbot.view.ChatbotView;
 
 /**
  * Application Controller for the Chat robot String manipulation project.
  * Responsible for controlling the VIew and model packages.
  * 
- * @author ahit0637
- * @version 1.3 10/1/14
+ * @author Alan Hite
+ * @version 1.4 11/4/14
  */
 public class ChatbotAppController {
 
@@ -48,17 +49,20 @@ public class ChatbotAppController {
 	public void start()
 
 	{
-		String message = AppView.displayChatbotConversations(startMessage);
-/*
-		while (!notSoCleverBot.quitChecker(message)) {
-			message = notSoCleverBot.processText(message);
-			message = AppView.displayChatbotConversations(message);
-		}
-
-		quit();
-*/
+			ChatbotPanel myAppPanel = (ChatbotPanel) baseFrame.getContentPane();
+			myAppPanel.displayTextToUser(startMessage);
+			
+			// this could work as the line of code above, ((Chatbot) baseFrame.getContentPane()).displayTextToUser(startMessage);
 	}
-
+	
+	public String sendTextToChatBot(String userInput)
+	{
+		String respondText = "";
+		
+		respondText = notSoCleverBot.processText(userInput);
+		return respondText;
+	}
+	
 	/**
 	 * Says Bye and quits
 	 */

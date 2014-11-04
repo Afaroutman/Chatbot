@@ -24,6 +24,7 @@ public class Chatbot
 
 		memeList = new ArrayList<String>();
 		fillTheMemeList();
+		User myUser = new User();
 	}
 
 	/**
@@ -118,10 +119,14 @@ public class Chatbot
 	{
 		String processedText = "";
 
-		int randomChoice = (int) (Math.random() * 3);
+		int randomChoice = (int) (Math.random() * 4);
 		contentArea = "games";
 		if (userText != null)
 		{
+			if(numberOfChats < 10)
+			{
+				
+			}
 			if (randomChoice == 0)
 			{
 				if (stringLengthChecker(userText))
@@ -140,7 +145,8 @@ public class Chatbot
 				{
 					processedText = " Why dont you play games";
 				}
-			} else
+			}
+			else if (randomChoice == 2)
 			{
 				if (memeChecker(userText))
 				{
@@ -150,6 +156,10 @@ public class Chatbot
 				{
 					processedText = "boring that wasn't a meme.";
 				}
+			}
+			else
+			{
+				//User based talking
 			}
 
 		}
