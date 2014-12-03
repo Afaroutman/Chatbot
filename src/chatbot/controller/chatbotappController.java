@@ -12,8 +12,8 @@ import chatbot.view.ChatbotView;
  * @author Alan Hite
  * @version 1.4 11/4/14
  */
-public class ChatbotAppController {
-
+	public class ChatbotAppController {
+	
 	private ChatbotView AppView;
 
 	private Chatbot notSoCleverBot;
@@ -34,7 +34,6 @@ public class ChatbotAppController {
 		notSoCleverBot = new Chatbot("CoolerBot");
 		startMessage = "Welcome! Welcome, type in your name";
 	}
-
 	/**
 	 * Allows other objects access to the notSoCleverBot.
 	 * @return The Chatbot for this application
@@ -42,7 +41,6 @@ public class ChatbotAppController {
 	public Chatbot getnotSoCleverBot() {
 		return notSoCleverBot;
 	}
-
 	/**
 	 * starts the Chatbot application
 	 */
@@ -52,7 +50,7 @@ public class ChatbotAppController {
 			ChatbotPanel myAppPanel = (ChatbotPanel) baseFrame.getContentPane();
 			myAppPanel.displayTextToUser(startMessage);
 			
-			// this could work as the line of code above, ((Chatbot) baseFrame.getContentPane()).displayTextToUser(startMessage);
+			//this could work as the line of code above, ((Chatbot) baseFrame.getContentPane()).displayTextToUser(startMessage);
 	}
 	
 	public String sendTextToChatBot(String userInput)
@@ -60,16 +58,16 @@ public class ChatbotAppController {
 		String respondText = "";
 		
 		respondText = notSoCleverBot.processText(userInput);
+		
 		return respondText;
 	}
-	
 	/**
 	 * Says Bye and quits
+	 * @return 
 	 */
-	
-	private void quit() {
+	private void quit()
+	{
 		AppView.displayInformation("goodbye cruel user :(");
 		System.exit(0);
 	}
-	
 }

@@ -7,7 +7,29 @@ public class User
 	private String Username;
 	private int  Cool;
 	public boolean Happy;
+	private int age;
+	private String FavoriteGame;
 	
+	public String getFavoriteGame()
+	{
+		return FavoriteGame;
+	}
+
+	public void setFavoriteGame(String input)
+	{
+		FavoriteGame = input;
+	}
+
+	public int getAge()
+	{
+		return age;
+	}
+
+	public void setAge(int age)
+	{
+		this.age = age;
+	}
+
 	public boolean isHappy()
 	{
 		return Happy;
